@@ -1,0 +1,176 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.btn, .btn:focus, .btn:active {
+  outline: none !important;
+  background-color: #ff1940 !important;
+  border: none !important;
+}
+
+/* custom css */ 
+
+.app{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100vh;
+  font-size: 16px;
+}
+
+
+.messages-container{
+  flex-basis: 80%;
+  margin-bottom: 0;
+  height: 100vh;
+}
+
+.channels, .users, .messages{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.messages{
+  height: 94%;
+}
+.channels > ul, .messages > ul, .users > ul{
+  flex: 1;
+  overflow-y: auto;
+}
+.message > .author{
+  flex-basis: 100%;
+}
+.message > .body{
+  flex-basis: 100%;
+}
+
+.timestamp{
+  color: #808080;
+  font-style: italic;
+  padding-left: 10px;
+  font-size: 13px;
+}
+.form-group{
+  margin-bottom: 0;
+}
+ul{
+  list-style-type:none;
+  padding: 0;
+}
+
+a{
+  cursor: pointer;
+  color: #fff;
+}
+
+.message-panel{
+  height: 100%;
+  width: 100%;
+}
+
+.default-message{
+  padding-left: 20px;
+  padding-top: 10px;
+  height: 45px;
+  width: 100%;
+  background-color: lightgrey;
+}
+
+.message{
+  padding: 20px;
+}
+
+.message:hover{
+  background-color: #E9E9E9;
+  border-radius: 10px;
+
+}
+
+/* /////HERE///// */
+.users{
+  width: 30%;
+  margin: 20% auto;
+  text-align: center;
+}
+
+.users button{
+  margin-top: 20px;
+  height: 40px;
+  width: 380px;
+}
+
+.users input{
+  height: 40px;
+}
+
+.users .form-control:focus{
+  border-color: #ff1940;
+  box-shadow: 0 .2px .2px #ff899d inset, 0 0 8px #ff899d;
+  outline: 0 none;
+}
+
+.users button:hover{
+  background-color: #c11734 !important;
+  border: none;
+}
+
+.nav{
+  flex-basis: 25%;
+  background-color: #ff1940;
+}
+
+.nav .support{
+  height: 100%;
+  text-align: left;
+  color: #fff;
+}
+
+.nav .support h3{
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+
+.nav .support span{
+  margin-left: 20px;
+  font-size: 12px;
+}
+
+.channels{
+  margin-top: 30px;
+}
+
+.channels li{
+  font-size: 15px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.channels li:hover {
+  background-color: #a0142c;
+}
+
+.channels li.active {
+  background-color: #a0142c;
+}
