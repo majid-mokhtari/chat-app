@@ -6,8 +6,8 @@ class MessageForm extends Component{
   onSubmit(e){
     e.preventDefault();
     const node = this.refs.message;
-    const messageName = node.value;
-    this.props.addMessage(messageName);
+    const message = node.value;
+    this.props.addMessage(message);
     node.value = '';
   }
 

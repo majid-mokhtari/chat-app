@@ -62,10 +62,22 @@ export function getChannelMessages(id){
 }
 
 
-export function addMessage(res){
+export function addMessage(id, request){
+    let url = `${roomsUrl}/${id}/messages`;
     return dispatch => {
-        return dispatch(messageAdded(res));
-    }
+        return Rest.post(url, request)
+          .then(extractJSON)
+          .then(res => {
+            if (hasError(res)) {
+              dispatch(showCustomError(res));
+            } else {
+              dispatch(getChannelMessages(id))
+            }
+          })
+          .catch(err => {
+            return dispatch(onServerError(err));
+          });
+      };
 }
 
 function channelsLoaded(res){
