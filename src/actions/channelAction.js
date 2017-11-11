@@ -100,13 +100,6 @@ function messagesLoaded(res){
     }
 }
 
-function messageAdded(res){
-    return {
-        type: types.MESSAGE_ADDED,
-        payLoad: res
-    }
-}
-
 function channelIsSet(res){
     return {
         type: types.CHANNEL_IS_SET,

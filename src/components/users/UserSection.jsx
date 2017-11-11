@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
-import PropTypes from 'prop-types';
 
 class UserForm extends Component{
+  constructor(props){
+    super();
+    this.state = {
+      value: ""
+    }
+  }
   onSubmit(e){
     e.preventDefault();
     const node = this.refs.user;
@@ -19,8 +24,9 @@ class UserForm extends Component{
             placeholder='Type your user name...'
             type='text'
             ref='user'
+            onChange={(e) => {this.setState({value: e.target.value})} }
           />
-          <button className="btn btn-primary">
+          <button className="btn btn-primary" disabled={this.state.value === ""}>
            Join the DoorDash Chat!
           </button>
         </div>
@@ -28,10 +34,6 @@ class UserForm extends Component{
       </div>
     )
   }
-}
-
-UserForm.propTypes = {
-  addUser: PropTypes.func.isRequired
 }
 
 
