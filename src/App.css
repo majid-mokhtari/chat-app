@@ -50,6 +50,16 @@ ul{
   text-align: center;
 }
 
+.users input {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.users button {
+  height: 40px;
+  width: 100%;
+}
+
 .users button:hover{
   background-color: #c11734 !important;
   border: none;

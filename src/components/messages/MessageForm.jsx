@@ -17,7 +17,7 @@ class MessageForm extends Component{
         <div className='form-group'>
           <input 
             className='form-control'
-            placeholder='Add Message'
+            placeholder='Type a message...'
             type='text'
             ref='message'
           />

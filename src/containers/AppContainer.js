@@ -8,12 +8,6 @@ import MessageSection from './../components/messages/MessageSection.jsx';
 
 class AppContainer extends Component {
 
-    componentWillMount(){
-      this.props.actions.loadChannels();
-      //this.props.actions.loadUsers();
-      //this.props.actions.loadMessages();
-    }
-
     render() {
         const { activeUser } = this.props.channelReducer;
         if(!activeUser){

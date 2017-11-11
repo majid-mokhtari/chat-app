@@ -4,6 +4,10 @@ import ChannelList from './ChannelList';
 
 class ChannelSection extends Component {
 
+    componentWillMount(){
+        this.props.actions.loadChannels();
+    }
+
     setChannel(activeChannel){
         const { id } = activeChannel;
         this.props.actions.getChannelDetails(id);

@@ -80,6 +80,12 @@ export function addMessage(id, request){
       };
 }
 
+export function addUser(request){
+  return dispatch => {
+      return dispatch(userAdded(request));
+  }
+}
+
 function channelsLoaded(res){
     return {
         type: types.CHANNELS_LOADED,
@@ -106,4 +112,11 @@ function channelIsSet(res){
         type: types.CHANNEL_IS_SET,
         payLoad: res
     }
+}
+
+function userAdded(res){
+  return {
+      type: types.USER_ADDED,
+      payLoad: res
+  }
 }
