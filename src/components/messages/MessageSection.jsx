@@ -12,20 +12,31 @@ class MessageSection extends Component {
       this.props.addMessage({id: messages.length+1, channelId: activeChannel.id, body, createdAt, author});
     }
 
+    renderUsers(users){
+        return users.map((user, i) => {
+            let comma = i !== users.length-1 ? ", " : "";
+            return (
+                <span key={i}>{`${user}${comma}`}</span>
+            )
+        });
+    }
+
     render() {
-        const { messages, activeChannel } = this.props.channelReducer;
-        const { name } = activeChannel;
+        const { messages, activeChannel, activeUser } = this.props.channelReducer;
+        const { name, users } = activeChannel;
         if(!name){
             return ( 
-                <div className="default-message"> <span>Select a channel</span></div>
+                <div className="default-message"> <span>Select a chat room</span></div>
             )
         }
         return (
-            <div className='support panel panel-primary message-panel'>
-                <div className='panel-heading'>
-                    <strong>Messages</strong>
+            <div className='message-panel'>
+                <div className='message-heading'>
+                    <h3>{name}</h3>
+                    <span style={{color: "red"}}>{`${activeUser}, `} </span>
+                    {this.renderUsers(users)}
                 </div>
-                <div className='panel-body messages'>
+                <div className='messages'>
                     <MessageList 
                         {...this.props} 
                         messages={messages}

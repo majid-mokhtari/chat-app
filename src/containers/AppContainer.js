@@ -10,12 +10,8 @@ class AppContainer extends Component {
 
     componentWillMount(){
       this.props.actions.loadChannels();
-      this.props.actions.loadUsers();
-      this.props.actions.loadMessages();
-    }
-
-    setChannel(activeChannel){
-      this.props.actions.setChannel(activeChannel);
+      //this.props.actions.loadUsers();
+      //this.props.actions.loadMessages();
     }
 
     render() {
@@ -32,7 +28,6 @@ class AppContainer extends Component {
             <div className="nav" >
               <ChannelSection 
                 {...this.props} 
-                setChannel={this.setChannel.bind(this)}
               />
             </div>
             <MessageSection 

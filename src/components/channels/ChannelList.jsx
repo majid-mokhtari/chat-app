@@ -8,7 +8,6 @@ class ChannelList extends Component{
     if(!channels.length){
       return null;
     }
-    console.log(channels);
     return (
       <ul>{
         channels.map( chan =>{
@@ -26,7 +25,6 @@ class ChannelList extends Component{
 
 ChannelList.propTypes = {
   channels: PropTypes.array.isRequired,
-  setChannel: PropTypes.func.isRequired,
   activeChannel: PropTypes.object.isRequired
 }
 

@@ -29,6 +29,12 @@
   border: none !important;
 }
 
+.form-control:focus{
+  border-color: #ff1940;
+  box-shadow: 0 .2px .2px #ff899d inset, 0 0 8px #ff899d;
+  outline: 0 none;
+}
+
 /* custom css */ 
 
 .app{
@@ -39,22 +45,6 @@
   font-size: 16px;
 }
 
-
-.messages-container{
-  flex-basis: 80%;
-  margin-bottom: 0;
-  height: 100vh;
-}
-
-.channels, .users, .messages{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.messages{
-  height: 94%;
-}
 .channels > ul, .messages > ul, .users > ul{
   flex: 1;
   overflow-y: auto;
@@ -85,11 +75,6 @@ a{
   color: #fff;
 }
 
-.message-panel{
-  height: 100%;
-  width: 100%;
-}
-
 .default-message{
   padding-left: 20px;
   padding-top: 10px;
@@ -113,22 +98,6 @@ a{
   width: 30%;
   margin: 20% auto;
   text-align: center;
-}
-
-.users button{
-  margin-top: 20px;
-  height: 40px;
-  width: 380px;
-}
-
-.users input{
-  height: 40px;
-}
-
-.users .form-control:focus{
-  border-color: #ff1940;
-  box-shadow: 0 .2px .2px #ff899d inset, 0 0 8px #ff899d;
-  outline: 0 none;
 }
 
 .users button:hover{
@@ -173,4 +142,36 @@ a{
 
 .channels li.active {
   background-color: #a0142c;
+}
+
+.message-panel{
+  height: 85%;
+  width: 100%;
+}
+
+.message-heading{
+  height: 80px;
+  text-align: center;
+}
+
+.messages{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 98%;
+}
+
+.messages ul{
+  background-color: lightgrey;
+  margin-bottom: 0;
+}
+
+.messages form{
+  width: 80%;
+  margin-left: 20px;
+  padding-top: 30px;
+}
+
+.messages form input{
+  height: 40px;
 }

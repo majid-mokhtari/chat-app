@@ -11,7 +11,6 @@ const initialState = {
 export function channelReducer(state = initialState, action){
     switch(action.type){
         case types.CHANNELS_LOADED:
-        console.log(action.payLoad)
         return {
             ...state,
             type: types.CHANNELS_LOADED,

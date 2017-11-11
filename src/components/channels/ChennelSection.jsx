@@ -4,6 +4,11 @@ import ChannelList from './ChannelList';
 
 class ChannelSection extends Component {
 
+    setChannel(activeChannel){
+        const { id } = activeChannel;
+        this.props.actions.getChannelDetails(id);
+    }
+
     render() {
         const { channels, activeChannel, activeUser } = this.props.channelReducer;
         return (
@@ -15,6 +20,7 @@ class ChannelSection extends Component {
                         {...this.props} 
                         channels={channels}
                         activeChannel={activeChannel}
+                        setChannel={this.setChannel.bind(this)}
                     />
                 </div>
             </div>

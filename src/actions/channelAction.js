@@ -26,22 +26,21 @@ export function loadChannels() {
       };
 }
 
-export function addChannel(request){
+export function getChannelDetails(id){
     return dispatch => {
-        return dispatch(channelAdded(request));
-    }
-}
-
-export function loadUsers() {
-    return dispatch => {
-        return dispatch(usersLoaded([{id: 1, name: "Majid"}]));
-    }
-}
-
-export function addUser(request){
-    return dispatch => {
-        return dispatch(userAdded(request));
-    }
+        return Rest.get(`${roomsUrl}/${id}`)
+          .then(extractJSON)
+          .then(res => {
+            if (hasError(res)) {
+              dispatch(showCustomError(res));
+            } else {
+                 dispatch(channelIsSet(res));
+            }
+          })
+          .catch(err => {
+            return dispatch(onServerError(err));
+          });
+      };
 }
 
 export function loadMessages() {
@@ -56,36 +55,9 @@ export function addMessage(res){
     }
 }
 
-export function setChannel(res){
-    return dispatch => {
-        return dispatch(channelIsSet(res));
-    }
-}
-
 function channelsLoaded(res){
     return {
         type: types.CHANNELS_LOADED,
-        payLoad: res
-    }
-}
-
-function channelAdded(res){
-    return {
-        type: types.CHANNEL_ADDED,
-        payLoad: res
-    }
-}
-
-function usersLoaded(res){
-    return {
-        type: types.USERS_LOADED,
-        payLoad: res
-    }
-}
-
-function userAdded(res){
-    return {
-        type: types.USER_ADDED,
         payLoad: res
     }
 }
