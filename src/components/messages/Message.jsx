@@ -6,11 +6,11 @@ class Message extends Component{
     const {message} = this.props;
     return (
       <li className="message">
-        <div className="author">
-          <strong>{message.name}</strong>
-        </div>
         <div className="body">
           {message.message}
+        </div>
+        <div className="author">
+          {message.name}
         </div>
       </li>
     )
