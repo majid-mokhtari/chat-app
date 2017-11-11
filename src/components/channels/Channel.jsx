@@ -9,7 +9,7 @@ class Channel extends Component{
   }
   render(){
     const {channel, activeChannel} = this.props;
-    const active = channel === activeChannel ? 'active' : '';
+    const active = channel.id === activeChannel.id ? 'active' : '';
     return (
       <li className={active} onClick={this.onClick.bind(this)}>
         {channel.name}
