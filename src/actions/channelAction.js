@@ -35,6 +35,7 @@ export function getChannelDetails(id){
               dispatch(showCustomError(res));
             } else {
                  dispatch(channelIsSet(res));
+                 dispatch(getChannelMessages(id))
             }
           })
           .catch(err => {
@@ -43,11 +44,23 @@ export function getChannelDetails(id){
       };
 }
 
-export function loadMessages() {
+export function getChannelMessages(id){
     return dispatch => {
-        return dispatch(messagesLoaded([]));
-    }
+        return Rest.get(`${roomsUrl}/${id}/messages`)
+          .then(extractJSON)
+          .then(res => {
+            if (hasError(res)) {
+              dispatch(showCustomError(res));
+            } else {
+                 dispatch(messagesLoaded(res));
+            }
+          })
+          .catch(err => {
+            return dispatch(onServerError(err));
+          });
+      };
 }
+
 
 export function addMessage(res){
     return dispatch => {
