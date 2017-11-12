@@ -3,7 +3,6 @@ import * as types from './../constants/types'
 const initialState = {
     channels: [],
     activeChannel: {},
-    users: [],
     messages: [],
     activeUser: ""
 }
@@ -24,20 +23,11 @@ export function channelReducer(state = initialState, action){
             type: types.CHANNEL_ADDED,
             channels: newChannels
         }
-        
-        case types.USERS_LOADED:
-        return {
-            ...state,
-            type: types.USERS_LOADED,
-            users: action.payLoad
-        }
 
         case types.USER_ADDED:
-        const newUsers = state.users.concat(action.payLoad)
         return {
             ...state,
             type: types.USER_ADDED,
-            users: newUsers,
             activeUser: action.payLoad
         }
 
