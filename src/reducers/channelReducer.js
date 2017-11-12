@@ -5,7 +5,7 @@ const initialState = {
     activeChannel: {},
     users: [],
     messages: [],
-    activeUser: "Majid Mokhtari"
+    activeUser: ""
 }
 
 export function channelReducer(state = initialState, action){

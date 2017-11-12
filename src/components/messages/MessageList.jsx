@@ -3,10 +3,14 @@ import Message from './Message.jsx';
 import PropTypes from 'prop-types';
 
 class MessageList extends Component{
+  componentDidUpdate(){
+    var chatDiv = document.getElementsByClassName('message-container')[0];
+    chatDiv.scrollTop = chatDiv.scrollHeight;
+  }
   render(){
     const { messages, activeUser } = this.props;
     return (
-      <ul>{
+      <ul className="message-container">{
         messages.map( message =>{
           return <Message 
             message={message}

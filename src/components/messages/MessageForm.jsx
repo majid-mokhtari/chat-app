@@ -18,7 +18,7 @@ class MessageForm extends Component{
     return (
       <form onSubmit={this.onSubmit.bind(this)}>
         <div className="form-row">
-            <div className="col-md-11">
+            <div className="col-xs-11">
               <input 
                 className='form-control'
                 placeholder='Type a message...'
@@ -26,7 +26,7 @@ class MessageForm extends Component{
                 ref='message'
               />
             </div>
-            <div className="col-md-1">
+            <div className="col-xs-1">
               <button className="btn btn-primary send-button">
               Send
               </button>
