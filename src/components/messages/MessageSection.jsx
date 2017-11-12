@@ -40,9 +40,11 @@ class MessageSection extends Component {
                         activeUser={activeUser}
                         messages={messages}
                     />
+                </div>
+                <div className="messages-form">
                     <MessageForm 
-                        addMessage={this.addMessage.bind(this)}
-                    />
+                            addMessage={this.addMessage.bind(this)}
+                        />
                 </div>
             </div>
         )
