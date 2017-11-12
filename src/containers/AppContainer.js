@@ -7,7 +7,6 @@ import UserSection from './../components/users/UserSection.jsx';
 import MessageSection from './../components/messages/MessageSection.jsx';
 
 class AppContainer extends Component {
-
     render() {
         const { activeUser } = this.props.channelReducer;
         if(!activeUser){
