@@ -10,13 +10,13 @@ class AppContainer extends Component {
 
     render() {
         const { activeUser } = this.props.channelReducer;
-        if(!activeUser){
-          return (
-            <UserSection 
-              {...this.props} 
-            />
-          )
-        }
+        // if(!activeUser){
+        //   return (
+        //     <UserSection 
+        //       {...this.props} 
+        //     />
+        //   )
+        // }
         return (
           <div className="app room">
             <div className="nav" >

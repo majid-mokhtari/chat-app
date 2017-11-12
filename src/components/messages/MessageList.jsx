@@ -4,12 +4,13 @@ import PropTypes from 'prop-types';
 
 class MessageList extends Component{
   render(){
-    const { messages } = this.props;
+    const { messages, activeUser } = this.props;
     return (
       <ul>{
         messages.map( message =>{
           return <Message 
             message={message}
+            activeUser={activeUser}
             key={message.id}
           />
         })

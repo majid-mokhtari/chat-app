@@ -7,22 +7,31 @@ class MessageForm extends Component{
     e.preventDefault();
     const node = this.refs.message;
     const message = node.value;
-    this.props.addMessage(message);
+    if(message || message !== ""){
+      console.log(message)
+      this.props.addMessage(message);
+    }
     node.value = '';
   }
 
   render(){
     return (
       <form onSubmit={this.onSubmit.bind(this)}>
-        <div className='form-group'>
-          <input 
-            className='form-control'
-            placeholder='Type a message...'
-            type='text'
-            ref='message'
-          />
+        <div className="form-row">
+            <div className="col-md-11">
+              <input 
+                className='form-control'
+                placeholder='Type a message...'
+                type='text'
+                ref='message'
+              />
+            </div>
+            <div className="col-md-1">
+              <button className="btn btn-primary send-button">
+              Send
+              </button>
+            </div>
         </div> 
-        
       </form>
     )
   }

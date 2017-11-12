@@ -37,6 +37,7 @@ class MessageSection extends Component {
                 <div className='messages'>
                     <MessageList 
                         {...this.props} 
+                        activeUser={activeUser}
                         messages={messages}
                     />
                     <MessageForm 
