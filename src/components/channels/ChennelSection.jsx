@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ChannelList from './ChannelList';
+import '../../styles/channel.css';
 
 let seconds = 0,
     minutes = 0;

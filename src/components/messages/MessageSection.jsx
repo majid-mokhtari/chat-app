@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MessageList from './MessageList';
 import MessageForm from './MessageForm';
-
+import '../../styles/message.css';
 
 class MessageSection extends Component {
     

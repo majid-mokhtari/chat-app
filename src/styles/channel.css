@@ -1,0 +1,17 @@
+ .channels{
+    margin-top: 30px;
+  }
+  
+  .channels li{
+    font-size: 15px;
+    padding: 20px;
+    cursor: pointer;
+  }
+  
+  .channels li:hover {
+    background-color: #a0142c;
+  }
+  
+  .channels li.active {
+    background-color: #a0142c;
+  }
